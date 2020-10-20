@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&family=IBM+Plex+Serif:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap');
+body{
+  background-color: #f6f4e6;
+}
+
+*{
+  font-family: 'Frank Ruhl Libre', serif;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*********slider**********/
+
+.container img{
+  width: 200px;
+  height: 200px;
+}
+#container2 {
+  color:black;
+  text-transform: uppercase;
+  font-size:36px;
+  font-weight:bold;
+  padding-top:200px;  
+  position: absolute;;
+  z-index: 100;
+  bottom:45%;
+  right: 0;
+  margin-right: 180px;
+  
+}
+
+#animationhed{
+  /* border: 3px solid ; */
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#flip {
+  height:50px;
+  overflow:hidden;
+}
+
+#flip > div > div {
+  color:#fff;
+  padding:4px 12px;
+  height:45px;
+  margin-bottom:45px;
+  display:inline-block;
+}
+
+#flip div:first-child {
+  animation: show 17s linear infinite;
+}
+
+#flip div div {
+  background:#42c58a;
+}
+#flip div:first-child div {
+  background:#4ec7f3;
+}
+#flip div:last-child div {
+  background:#DC143C;
+}
+
+@keyframes show {
+  0% {margin-top:-270px;}
+  5% {margin-top:-180px;}
+  33% {margin-top:-180px;}
+  38% {margin-top:-90px;}
+  66% {margin-top:-90px;}
+  71% {margin-top:0px;}
+  99.99% {margin-top:0px;}
+  100% {margin-top:-270px;}
+}
+
+
+.each-slide{
+  width: 100%;
+  position: relative;
+  margin: auto;
+  width:100%;
+
+}
+.each-slide .slide-img{
+  height:650px;
+  width:100%;
+}
+.slide-img{
+width: 100%;
+   height: auto;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+/* section2 */
+#section2{
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  padding-bottom: 50px;
+
+
+}
+/****about us****/
+
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 16px;
+  padding: 10px 8px;
+} 
+.and{
+  color: red;
+
+}
+.column {
+  width: 470px;
+  display: flexbox;
+  margin: 10px 30px;
+}
+.cardhome {
+  height: 547px;
+  /* background-color: 	 #fddb3a; */
+  text-align: center;
+	padding: 10px;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.4);
+  margin: 8px;
+  display: flexbox;
+
+
+}
+#logo{
+  font-family: 'Kaushan Script', cursive !important;
+}
+#logo span{
+	color: #fddb3a;
+  margin: 5px;
+  font-family: 'Kaushan Script', cursive !important;
+  
+}
+.about-section {
+  font-size: 20px;
+  padding: 50px;
+  text-align: center;
+  background-color: #f6f4e6;
+  color: black;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+
+}
+#homePage {
+  padding: 10px;
+  background-color: #f6f4e6;
+  margin: 0;
+
+}
+.container {
+  color: #000;
+  text-align: center;
+  height: 300px;
+  padding: 10px 16px;
+}
+
+#hedings  {
+
+  background-color: #f6f4e6;
+  text-align: center;
+  font-size: 40px;
+  padding: 20px;
+}
+
+.cardspara{
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0 0 15px 0;
+}
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+}
+
+.button {	
+  border-radius: 3px;
+  border:  2px solid black;
+  background-image: linear-gradient(648deg, rgba(225, 225, 225, 0.05) 0%, rgba(225, 225, 225, 0.05) 33.333%,rgba(114, 114, 114, 0.05) 33.333%, rgba(114, 114, 114, 0.05) 66.666%,rgba(52, 52, 52, 0.05) 66.666%, rgba(52, 52, 52, 0.05) 99.999%),linear-gradient(408deg, rgba(181, 181, 181, 0.05) 0%, rgba(181, 181, 181, 0.05) 33.333%,rgba(27, 27, 27, 0.05) 33.333%, rgba(27, 27, 27, 0.05) 66.666%,rgba(251, 251, 251, 0.05) 66.666%, rgba(251, 251, 251, 0.05) 99.999%),linear-gradient(543deg, rgba(98, 98, 98, 0.05) 0%, rgba(98, 98, 98, 0.05) 33.333%,rgba(222, 222, 222, 0.05) 33.333%, rgba(222, 222, 222, 0.05) 66.666%,rgba(228, 228, 228, 0.05) 66.666%, rgba(228, 228, 228, 0.05) 99.999%),linear-gradient(-90deg, rgb(246,244,230),rgb(253,219,58));
+  background-color: #fddb3a;
+	color: black !important;
+	padding: 15px 50px;
+	font-weight: bold;
+;
+}
+
+.button:hover {
+  color: #f6f4e6 !important;
+  background-image: linear-gradient(246deg, rgba(234, 234, 234, 0.04) 0%, rgba(234, 234, 234, 0.04) 33.3%,rgba(69, 69, 69, 0.04) 33.3%, rgba(69, 69, 69, 0.04) 66.6%,rgba(189, 189, 189, 0.04) 66.6%, rgba(189, 189, 189, 0.04) 99.89999999999999%),linear-gradient(81deg, rgba(126, 126, 126, 0.05) 0%, rgba(126, 126, 126, 0.05) 33.3%,rgba(237, 237, 237, 0.05) 33.3%, rgba(237, 237, 237, 0.05) 66.6%,rgba(74, 74, 74, 0.05) 66.6%, rgba(74, 74, 74, 0.05) 99.89999999999999%),linear-gradient(14deg, rgba(3, 3, 3, 0.08) 0%, rgba(3, 3, 3, 0.08) 33.3%,rgba(156, 156, 156, 0.08) 33.3%, rgba(156, 156, 156, 0.08) 66.6%,rgba(199, 199, 199, 0.08) 66.6%, rgba(199, 199, 199, 0.08) 99.89999999999999%),linear-gradient(323deg, rgba(82, 82, 82, 0.06) 0%, rgba(82, 82, 82, 0.06) 33.3%,rgba(179, 179, 179, 0.06) 33.3%, rgba(179, 179, 179, 0.06) 66.6%,rgba(212, 212, 212, 0.06) 66.6%, rgba(212, 212, 212, 0.06) 99.89999999999999%),linear-gradient(32deg, rgba(70, 70, 70, 0.02) 0%, rgba(70, 70, 70, 0.02) 33.3%,rgba(166, 166, 166, 0.02) 33.3%, rgba(166, 166, 166, 0.02) 66.6%,rgba(53, 53, 53, 0.02) 66.6%, rgba(53, 53, 53, 0.02) 99.89999999999999%),linear-gradient(38deg, rgba(129, 129, 129, 0.09) 0%, rgba(129, 129, 129, 0.09) 33.3%,rgba(38, 38, 38, 0.09) 33.3%, rgba(38, 38, 38, 0.09) 66.6%,rgba(153, 153, 153, 0.09) 66.6%, rgba(153, 153, 153, 0.09) 99.89999999999999%),linear-gradient(63deg, rgba(51, 51, 51, 0.02) 0%, rgba(51, 51, 51, 0.02) 33.3%,rgba(12, 12, 12, 0.02) 33.3%, rgba(12, 12, 12, 0.02) 66.6%,rgba(158, 158, 158, 0.02) 66.6%, rgba(158, 158, 158, 0.02) 99.89999999999999%),linear-gradient(227deg, rgba(63, 63, 63, 0.03) 0%, rgba(63, 63, 63, 0.03) 33.3%,rgba(9, 9, 9, 0.03) 33.3%, rgba(9, 9, 9, 0.03) 66.6%,rgba(85, 85, 85, 0.03) 66.6%, rgba(85, 85, 85, 0.03) 99.89999999999999%),linear-gradient(103deg, rgba(247, 247, 247, 0.07) 0%, rgba(247, 247, 247, 0.07) 33.3%,rgba(93, 93, 93, 0.07) 33.3%, rgba(93, 93, 93, 0.07) 66.6%,rgba(208, 208, 208, 0.07) 66.6%, rgba(208, 208, 208, 0.07) 99%),linear-gradient(0deg, rgb(246,244,230),rgb(38,41,45));
+  
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
