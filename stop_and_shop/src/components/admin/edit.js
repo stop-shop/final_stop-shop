@@ -238,7 +238,7 @@ export default function Create() {
                                 required
                                 fullWidth
                                 id="phone"
-                                label={'phone '+data.servs.title}
+                                label={'phone '+data.servs.phone}
                                 name="phone"
                                 autoComplete="phone"
                                 onChange={handleChange}
@@ -253,7 +253,7 @@ export default function Create() {
                                 required
                                 fullWidth
                                 id="email"
-                                label="email"
+                                label={'email '+data.servs.email}
                                 name="email"
                                 autoComplete="email"
                                 onChange={handleChange}
@@ -267,7 +267,7 @@ export default function Create() {
                                 required
                                 fullWidth
                                 id="address"
-                                label={data.servs.address}
+                                label={'address '+data.servs.address}
                                 name="address"
                                 autoComplete="address"
                                 onChange={handleChange}
@@ -281,7 +281,7 @@ export default function Create() {
                                 required
                                 fullWidth
                                 id="price"
-                                label="price"
+                                label={'price '+data.servs.price}
                                 name="price"
                                 autoComplete="price"
                                 onChange={handleChange}
@@ -295,7 +295,7 @@ export default function Create() {
                                 required
                                 fullWidth
                                 id="image"
-                                label="image"
+                                label={'image : http//'}
                                 name="image"
                                 autoComplete="image"
                                 onChange={handleChange}
