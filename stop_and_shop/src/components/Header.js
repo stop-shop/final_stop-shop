@@ -130,7 +130,36 @@ function Header() {
 						})()}
 
 					</nav>
-
+					<Button
+						href="#"
+						color="primary"
+						variant="outlined"
+						className={classes.link}
+						component={NavLink}
+						to="/login"
+					>
+						Profile
+					</Button>
+					<Button
+						href="#"
+						color="primary"
+						variant="outlined"
+						className={classes.link}
+						component={NavLink}
+						to="/login"
+					>
+						Login
+					</Button>
+					<Button
+						href="#"
+						color="primary"
+						variant="outlined"
+						className={classes.link}
+						component={NavLink}
+						to="/logout"
+					>
+						Logout
+					</Button>
 				</Toolbar>
 			</AppBar>
 		</React.Fragment>

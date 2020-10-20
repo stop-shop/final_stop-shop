@@ -12,7 +12,7 @@ function Goods_1() {
 
 	useEffect(() => {
 		setAppState({ loading: true });
-		const apiUrl = `http://localhost:8000/api/`;
+		const apiUrl = `https://finalshopbackend.herokuapp.com/api/`;
     fetch(apiUrl)
     // console.log(apiUrl)
 
