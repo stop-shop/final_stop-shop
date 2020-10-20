@@ -90,7 +90,9 @@ function Header() {
 					{(() => {
 							if (isLooged()) {
 
-								return (<Button
+								return (
+								<>
+								<Button
 									href="#"
 									color="primary"
 									variant="outlined"
@@ -100,6 +102,17 @@ function Header() {
 								>
 									Logout
 								</Button>
+													<Button
+													href="#"
+													color="primary"
+													variant="outlined"
+													className={classes.link}
+													component={NavLink}
+													to="/profile"
+												>
+													Profile
+												</Button>
+							</>
 
 								)
 							} else {
@@ -130,36 +143,6 @@ function Header() {
 						})()}
 
 					</nav>
-					<Button
-						href="#"
-						color="primary"
-						variant="outlined"
-						className={classes.link}
-						component={NavLink}
-						to="/profile"
-					>
-						Profile
-					</Button>
-					<Button
-						href="#"
-						color="primary"
-						variant="outlined"
-						className={classes.link}
-						component={NavLink}
-						to="/login"
-					>
-						Login
-					</Button>
-					<Button
-						href="#"
-						color="primary"
-						variant="outlined"
-						className={classes.link}
-						component={NavLink}
-						to="/logout"
-					>
-						Logout
-					</Button>
 				</Toolbar>
 			</AppBar>
 		</React.Fragment>
