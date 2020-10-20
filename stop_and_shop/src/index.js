@@ -10,20 +10,23 @@ import Footer from './components/Footer';
 import Register from './components/register';
 import Login from './components/login';
 import Logout from './components/logout';
-import App_1 from './App';
+import App from './App';
 import Servs from './components/single';
 import Gds from './components/goodDetails';
 import Admin from './Admin';
 import Create from './components/admin/create';
 import Edit from './components/admin/edit';
 import Delete from './components/admin/delete';
+import Search from './components/search';
+
 
 const routing = (
 	<Router>
 		<React.StrictMode>
 			<Header />
 			<Switch>
-				<Route exact path="/" component={App_1} />
+				<Route exact path="/search" component={Search} />
+				<Route exact path="/" component={App} />
 				<Route exact path="/profile" component={Admin} />
 				<Route exact path="/profile/create/" component={Create} />
 				<Route exact path="/profile/edit/:id" component={Edit} />
@@ -36,6 +39,7 @@ const routing = (
 				<Route path="/profile/:id" component={Servs} />
 				<Route path="/profile/:id" component={Gds} />
 			</Switch>
+			
 			<Footer />
 		</React.StrictMode>
 	</Router>

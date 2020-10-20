@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -7,6 +7,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import { NavLink } from 'react-router-dom';
 import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
+import SearchBar from 'material-ui-search-bar';
+import { useHistory } from 'react-router-dom';
+
 import '../css/style.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -25,8 +28,38 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
+// ************************************************************************
+var isLoggedIn = false;
+const isLooged = () => {
+	if (process.browser) {
+		isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
+		console.log(isLoggedIn)
+	}
+		return isLoggedIn
+	};
+// ************************************************************************
+
 function Header() {
 	const classes = useStyles();
+// ************************************************************************
+	let history = useHistory();
+
+
+	const [data, setData] = useState({ search: '' });
+
+	const goSearch = (e) => {
+		history.push({
+			pathname: '/search/',
+			search: '?search=' + data.search,
+		});
+		window.location.reload();
+
+
+// ************************************************************************
+		
+
+
+	};
 	return (
 		<React.Fragment>
 			<CssBaseline />
@@ -47,37 +80,57 @@ function Header() {
 							Stop<span>And</span>Shop
 						</a>
 					</Typography>
+
+					<SearchBar
+						value={data.search}
+						onChange={(newValue) => setData({ search: newValue })}
+						onRequestSearch={() => goSearch(data.search)}
+					/>
 					<nav>
-						<Link
-							color="textPrimary"
-							href="#"
-							className={classes.link}
-							component={NavLink}
-							to="/register"
-						>
-							Register
-						</Link>
+					{(() => {
+							if (isLooged()) {
+
+								return (<Button
+									href="#"
+									color="primary"
+									variant="outlined"
+									className={classes.link}
+									component={NavLink}
+									to="/logout"
+								>
+									Logout
+								</Button>
+
+								)
+							} else {
+								return (
+									<>
+
+										<Link
+											color="textPrimary"
+											href="#"
+											className={classes.link}
+											component={NavLink}
+											to="/register"
+										>
+											Register
+										</Link>
+										<Button
+											href="#"
+											color="primary"
+											variant="outlined"
+											className={classes.link}
+											component={NavLink}
+											to="/login"
+										>
+											Login
+										</Button>
+									</>)
+							}
+						})()}
+
 					</nav>
-					<Button
-						href="#"
-						color="primary"
-						variant="outlined"
-						className={classes.link}
-						component={NavLink}
-						to="/login"
-					>
-						Login
-					</Button>
-					<Button
-						href="#"
-						color="primary"
-						variant="outlined"
-						className={classes.link}
-						component={NavLink}
-						to="/logout"
-					>
-						Logout
-					</Button>
+
 				</Toolbar>
 			</AppBar>
 		</React.Fragment>

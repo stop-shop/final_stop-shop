@@ -52,7 +52,7 @@ export default function SignIn() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(formData);
+		// console.log(formData);
 
 		axiosInstance
 			.post(`token/`, {
@@ -62,16 +62,15 @@ export default function SignIn() {
 			.then((res) => {
 				localStorage.setItem('access_token', res.data.access);
 				localStorage.setItem('refresh_token', res.data.refresh);
-				localStorage.setItem('islogedin', true);
+				// localStorage.setItem('user_name', res.data.Username);
+				localStorage.setItem('isLoggedIn', true );
 				axiosInstance.defaults.headers['Authorization'] =
 					'JWT ' + localStorage.getItem('access_token');
-
-				history.push('/');
-				console.log(res);
-				console.log(res.data);
-
-			});
-	};
+					window.location.href = '/';
+					console.log(res);
+				    console.log('sataaaaaa'+res.data);
+				});
+			};
 
 	const classes = useStyles();
 
@@ -139,3 +138,5 @@ export default function SignIn() {
 		</Container>
 	);
 }
+
+
