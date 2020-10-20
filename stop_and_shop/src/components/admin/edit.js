@@ -36,6 +36,15 @@ export default function Create() {
     const valueRef = useRef('');
     const history = useHistory();
     const { id } = useParams();
+
+	const [data, setData] = useState({ servs: [] });
+
+	useEffect(() => {
+		axiosInstance.get(id).then((res) => {
+			setData({ servs: res.data });
+			console.log(res.data);
+		});
+	}, [setData]);
     const initialFormData = Object.freeze({
         title: '',
         // type: '',
@@ -229,12 +238,13 @@ export default function Create() {
                                 required
                                 fullWidth
                                 id="phone"
-                                label="phone"
+                                label={'phone '+data.servs.title}
                                 name="phone"
                                 autoComplete="phone"
                                 onChange={handleChange}
                                 multiline
                                 rows={4}
+                                // value={data.servs.title}
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -257,7 +267,7 @@ export default function Create() {
                                 required
                                 fullWidth
                                 id="address"
-                                label="address"
+                                label={data.servs.address}
                                 name="address"
                                 autoComplete="address"
                                 onChange={handleChange}

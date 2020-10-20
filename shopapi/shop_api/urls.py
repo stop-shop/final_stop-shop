@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import ShopList , Shopetails ,CreatePost,AdminPostDetail,DeletePost , EditPost , ProfileList
+from .views import ShopList , Shopetails ,CreatePost,AdminPostDetail,DeletePost , EditPost , ProfileList , ShopeListDetailfilter
 app_name = 'shop_api'
 
 
@@ -9,6 +9,7 @@ urlpatterns = [
     path('<int:pk>/', Shopetails.as_view(), name='shop_details'),
     ##########
     path('create/', CreatePost.as_view(), name='createpost'),
+    path('search/', ShopeListDetailfilter.as_view(), name='postsearch'),
     path('edit/postdetail/<int:pk>/', AdminPostDetail.as_view(), name='admindetailpost'),
     path('edit/<int:pk>/', EditPost.as_view(), name='editpost'),
     path('delete/<int:pk>/', DeletePost.as_view(), name='deletepost'),

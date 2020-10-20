@@ -7,7 +7,7 @@ import Pages from './components/home_services_goods';
 import { BrowserRouter as Router,Switch, Route } from 'react-router-dom';
 
 
-class App_1 extends Component {
+class App extends Component {
   state = {
     loggedIn: false
   }
@@ -22,6 +22,7 @@ class App_1 extends Component {
         <Switch>
         <Route path="/service" component={Service_1} />
         <Route path="/goods" component={Goods} />
+        
         <div className="App">
           <Slideshow />
           <Pages />
@@ -32,4 +33,4 @@ class App_1 extends Component {
   }
 }
 
-export default App_1;
+export default App;

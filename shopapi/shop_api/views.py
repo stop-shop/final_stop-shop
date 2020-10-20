@@ -5,7 +5,12 @@ from rest_framework import generics, permissions
 from shop.models import Shop
 from .serializers import ShopSerializer
 # from .permissions import IsAuthorOrReadOnly  
-from rest_framework.permissions import DjangoModelPermissions , BasePermission , SAFE_METHODS
+from rest_framework.permissions import DjangoModelPermissions , BasePermission  ,SAFE_METHODS, AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser
+from rest_framework import viewsets
+from rest_framework import filters
+from django.shortcuts import get_object_or_404
+from rest_framework.response import Response
+from rest_framework import filters
 
 
 
@@ -29,6 +34,16 @@ class ProfileList(generics.ListAPIView):
     def get_queryset(self):
         user = self.request.user
         return Shop.objects.filter(owner=user)
+
+class ShopeListDetailfilter(generics.ListAPIView):
+
+    queryset = Shop.objects.all()
+    serializer_class = ShopSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['^title']
+
+
+
 
 class Shopetails(generics.RetrieveUpdateDestroyAPIView , ShopUserWritePermission):
     permission_classes = (ShopUserWritePermission,)
