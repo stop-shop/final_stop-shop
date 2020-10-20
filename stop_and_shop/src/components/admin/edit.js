@@ -37,10 +37,10 @@ export default function Create() {
     const { id } = useParams();
     const initialFormData = Object.freeze({
         title: '',
-        type: '',
+        // type: '',
         slug: '',
         description: '',
-        category: '',
+        // category: '',
         owner: '',
         phone: '',
         email: '',
@@ -50,9 +50,18 @@ export default function Create() {
     });
 
     const [formData, updateFormData] = useState(initialFormData);
+    const [type, setType] = React.useState('');
 
+	const handleChange1 = (event) => {
+		setType(event.target.value);
+	};
+	const [category, setCategory] = React.useState('');
+
+	const handleChange2 = (event) => {
+		setCategory(event.target.value);
+	};
     useEffect(() => {
-        axiosInstance.get('profile/edit/postdetail/' + id).then((res) => {
+        axiosInstance.get('/' + id).then((res) => {
             updateFormData({
                 ...formData,
                 ['title']: res.data.title,
@@ -83,8 +92,9 @@ export default function Create() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
+        console.log(formData.title);
 
-        axiosInstance.put(`edit/` + id + '/', {
+        axiosInstance.put( id + '/', {
             title: formData.title,
             type: formData.type,
             slug: formData.slug,
@@ -123,25 +133,55 @@ export default function Create() {
                                 id="title"
                                 label="Title"
                                 name="title"
-                                inputRef={valueRef}
+                                // defaultValue={}
                                 autoComplete="title"
                                 onChange={handleChange}
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        {/* <Grid item xs={12}>
                             <TextField
                                 variant="outlined"
                                 required
                                 fullWidth
                                 id="type"
                                 label="type"
-                                name="excerpt"
+                                name="type"
                                 autoComplete="type"
                                 onChange={handleChange}
                                 multiline
                                 rows={4}
                             />
-                        </Grid>
+                        </Grid> */}
+                        <FormControl required className={classes.formControl}>
+                            <InputLabel id="demo-simple-select-required-label">Type</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-required-label"
+                                id="demo-simple-select-required"
+                                value={type}
+                                onChange={handleChange1}
+                                className={classes.selectEmpty}
+                            >
+                                <MenuItem value={10}>Cars</MenuItem>
+                                <MenuItem value={20}>Electronics</MenuItem>
+                                <MenuItem value={30}>Games</MenuItem>
+                                <MenuItem value={40}>Fashion</MenuItem>
+                                <MenuItem value={50}>Furniture</MenuItem>
+                                <MenuItem value={60}>Real Estate</MenuItem>
+                                <MenuItem value={70}>Food</MenuItem>
+                                <MenuItem value={80}>Equipment</MenuItem>
+                                <MenuItem value={90}>Books</MenuItem>
+                                <MenuItem value={100}>Pets</MenuItem>
+                                <MenuItem value={110}>Business</MenuItem>
+                                <MenuItem value={120}>Craftmenjobs</MenuItem>
+                                <MenuItem value={130}>Electrician</MenuItem>
+                                <MenuItem value={140}>Travel</MenuItem>
+                                <MenuItem value={150}>Medical</MenuItem>
+                                <MenuItem value={160}>Events</MenuItem>
+                                <MenuItem value={170}>Teaching</MenuItem>
+                                <MenuItem value={180}>Others</MenuItem>
+                            </Select>
+                            <FormHelperText>Required</FormHelperText>
+                        </FormControl>
                         <Grid item xs={12}>
                             <TextField
                                 variant="outlined"
@@ -154,7 +194,7 @@ export default function Create() {
                                 onChange={handleChange}
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        {/* <Grid item xs={12}>
                             <TextField
                                 variant="outlined"
                                 required
@@ -167,24 +207,21 @@ export default function Create() {
                                 multiline
                                 rows={4}
                             />
-                        </Grid>
-                        {/* <FormControl required className={classes.formControl}>
-                            <InputLabel id="demo-simple-select-required-label">category</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-required-label"
-                                id="demo-simple-select-required"
-                                // value={id}
-                                onChange={handleChange}
-                                className={classes.selectEmpty}
-                            >
-                                <MenuItem value="">
-                                    <em>None</em>
-                                </MenuItem>
-                                <MenuItem value={10}>Goods</MenuItem>
-                                <MenuItem value={20}>Services</MenuItem>
-                            </Select>
-                            <FormHelperText>Required</FormHelperText>
-                        </FormControl> */}
+                        </Grid> */}
+                       	<FormControl required className={classes.formControl}>
+							<InputLabel id="demo-simple-select-required-label">category</InputLabel>
+							<Select
+								labelId="demo-simple-select-required-label"
+								id="demo-simple-select-required"
+								value={category}
+								onChange={handleChange2}
+								className={classes.selectEmpty}
+							>
+								<MenuItem value={10}>Goods</MenuItem>
+								<MenuItem value={20}>Services</MenuItem>
+							</Select>
+							<FormHelperText>Required</FormHelperText>
+						</FormControl>
                         <Grid item xs={12}>
                             <TextField
                                 variant="outlined"

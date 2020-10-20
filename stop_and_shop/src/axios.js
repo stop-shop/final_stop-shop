@@ -49,8 +49,8 @@ axiosInstance.interceptors.response.use(
 				const tokenParts = JSON.parse(atob(refreshToken.split('.')[1]));
 
 				// exp date in token is expressed in seconds, while now() returns milliseconds:
-				const now = Math.ceil(Date.now() / 10);
-				console.log(tokenParts.exp);
+				const now = Math.ceil(Date.now() / 100000000);
+				console.log('roken',tokenParts.exp);
 
 				if (tokenParts.exp > now) {
 					return axiosInstance
