@@ -27,8 +27,7 @@ function MyVerticallyCenteredModal(props) {
 			<Modal.Body >
 				<div >
 					{/* <h4>for More Details Scan the Qr code</h4> */}
-
-					<div className="qrcode"><QRrCode value="https://finalshopbackend.herokuapp.com/api/3/" /></div>
+					<div className="qrcode"><QRrCode value={props.qr} /></div>
 				</div>
 
 			</Modal.Body>
@@ -92,7 +91,8 @@ const Services = (props) => {
 									>
 										<CardMedia
 											className={classes.cardMedia}
-											image="https://source.unsplash.com/random"
+											// image="https://source.unsplash.com/random"
+											image={service.image}
 											title="Image title"
 										/>
 									</Link>
@@ -145,6 +145,9 @@ const Services = (props) => {
 												<MyVerticallyCenteredModal
 													show={modalShow}
 													onHide={() => setModalShow(false)}
+													qr={"https://finalshopbackend.herokuapp.com/api/"+service.id+"/"}
+
+
 												/>
 
 											</div>
