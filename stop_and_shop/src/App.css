@@ -16,6 +16,11 @@ body{
   pointer-events: none;
 }
 
+h1{
+  font-family: 'Frank Ruhl Libre', serif !important;
+  margin-top: 20px;
+
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -83,7 +88,7 @@ body{
 }
 
 #flip div:first-child {
-  animation: show 17s linear infinite;
+  animation: show 18s linear infinite;
 }
 
 #flip div div {
@@ -275,8 +280,47 @@ html {
 
 .qrcode{
   text-align: center;
+  padding: 60px;
 }
 .hqrcode{
   text-align: center;
 }
+.qr{text-align: right;
+}
 /* __________________________ */
+
+.btn-warning {
+  border-radius: 3px;
+  border: 2px solid black;
+  background-image: linear-gradient(648deg, rgba(225, 225, 225, 0.05) 0%, rgba(225, 225, 225, 0.05) 33.333%,rgba(114, 114, 114, 0.05) 33.333%, rgba(114, 114, 114, 0.05) 66.666%,rgba(52, 52, 52, 0.05) 66.666%, rgba(52, 52, 52, 0.05) 99.999%),linear-gradient(408deg, rgba(181, 181, 181, 0.05) 0%, rgba(181, 181, 181, 0.05) 33.333%,rgba(27, 27, 27, 0.05) 33.333%, rgba(27, 27, 27, 0.05) 66.666%,rgba(251, 251, 251, 0.05) 66.666%, rgba(251, 251, 251, 0.05) 99.999%),linear-gradient(543deg, rgba(98, 98, 98, 0.05) 0%, rgba(98, 98, 98, 0.05) 33.333%,rgba(222, 222, 222, 0.05) 33.333%, rgba(222, 222, 222, 0.05) 66.666%,rgba(228, 228, 228, 0.05) 66.666%, rgba(228, 228, 228, 0.05) 99.999%),linear-gradient(-90deg, rgb(246,244,230),rgb(253,219,58));
+  background-color: #fddb3a;
+  color: black !important;
+  padding: 10px 20px;
+  /* font-weight: bold; */
+}
+.btn-warning:hover{
+  border-radius: 3px;
+  border: 2px solid black;
+  background-color: #fddb3a;
+  color: black !important;
+  padding: 10px 20px;
+  font-weight: bold;
+
+}
+
+.MuiTypography-colorTextSecondary {
+  color: black !important;
+}
+.MuiBox-root-12{
+  margin: 170px 0 !important;
+}
+.MuiButton-containedSecondary{
+  padding: 30px !important;
+  font-size: 30px !important;
+}
+
+
+
+.MuiSelect-selectMenu{
+  text-overflow: clip !important;
+}

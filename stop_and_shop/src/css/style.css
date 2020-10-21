@@ -188,7 +188,11 @@ a{
 	text-decoration: none;
 	color: #FFFFFF;
 }
-
+a:hover{
+	text-decoration: none;
+	color: #fddb3a;
+	
+}
 /* loding page */
 .load{margin-top: 0px;
 	margin-bottom: 1500px;
