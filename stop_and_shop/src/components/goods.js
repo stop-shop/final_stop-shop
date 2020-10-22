@@ -148,7 +148,7 @@ const Goods = (props) => {
 											<MyVerticallyCenteredModal
 												show={modalShow}
 												onHide={() => setModalShow(false)}
-												qr={"https://finalshopbackend.herokuapp.com/api/"+good.id+"/"}
+												qr={"https://uishop.vercel.app/profile/"+good.id+"/"}
 
 
 											/>
